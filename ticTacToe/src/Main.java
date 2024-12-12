@@ -19,6 +19,7 @@ public class Main {
         System.out.println("Joueur 1 : "+nomA);
         System.out.println("Joueur 2 : "+nomB);
         while(relancer == true){
+            int verif = 0;
             char[][] grille = {
                     {' ',' ',' '},
                     {' ',' ',' '},
@@ -94,6 +95,12 @@ public class Main {
                 }else if (grille[0][2] == 'X' && grille[1][2] == 'X' && grille[2][2] == 'X') {
                     System.out.println();
                     System.out.println("Bravo, "+nomA+" vous avez gagner la partie");
+                    break;
+                }
+                verif++;
+                if (verif == 5){
+                    System.out.println();
+                    System.out.println("-- EGALITE --");
                     break;
                 }
                 System.out.println();
