@@ -45,7 +45,12 @@ public class Main {
                                 valide = false;
                                 break;
                             }
-                            proposition[j] = verification - '0';
+                            for (int a = 0; a < chiffres.length; a++) {
+                                if (verification == chiffres[a]) {
+                                    proposition[j] = a + 1;
+                                    break;
+                                }
+                            }
                         }
                     }
                     if (!valide) {
@@ -98,10 +103,10 @@ public class Main {
             }
 
             System.out.print("Voulez-vous rejouer ? (o/n) : ");
-            String reponse = scanner.next().toLowerCase();
-            while (reponse.equals("N")||reponse.equals("O")||reponse.equals("OUI")||reponse.equals("NON")) {
+            String reponse = scanner.next().toUpperCase();
+            while (!reponse.equals("N")&&!reponse.equals("O")&&!reponse.equals("OUI")&&!reponse.equals("NON")) {
                 System.out.println("Saisir o/n");
-                reponse = scanner.next().toLowerCase();
+                reponse = scanner.next().toUpperCase();
             }
             if (reponse.equals("O")||reponse.equals("OUI")) {
                 jouer = true;
