@@ -25,8 +25,8 @@ public class Main {
                 } while (!unique);
             }
 
-            System.out.println("Bienvenue au jeu de MasterMind");
-            System.out.println("Il faut deviner la séquence secrète composée de 5 chiffres de 1 à 9. Vous avez 12 tentatives.");
+            System.out.println("Bienvenue dans MasterMind");
+            System.out.println("Deviner la séquence secrète composée de 5 chiffres avec 12 tentatives.");
 
             for (int i = 1; i <= 12; i++) {
                 System.out.println("Tentative " + i + ": Entrez une séquence de 5 chiffres : ");
@@ -36,7 +36,7 @@ public class Main {
                 while (!valide) {
                     saisie = scanner.next();
                     if (saisie.length() != 5) {
-                        System.out.print("Entrée invalide. Entrez exactement 5 chiffres entre 1 et 9 : ");
+                        System.out.print("Erreur, Entrez exactement 5 chiffres : ");
                     } else {
                         valide = true;
                         for (int j = 0; j < 5; j++) {
@@ -54,7 +54,7 @@ public class Main {
                         }
                     }
                     if (!valide) {
-                        System.out.print("Entrée invalide. Entrez exactement 5 chiffres entre 1 et 9 : ");
+                        System.out.print("Erreur, Entrez exactement 5 chiffres : ");
                     }
                 }
 
@@ -88,14 +88,14 @@ public class Main {
                 System.out.println("Indices: " + bienPlaces + " bien placé(s), " + malPlaces + " mal placé(s)");
 
                 if (bienPlaces == 5) {
-                    System.out.println("Félicitations ! Vous avez deviné la séquence secrète.");
+                    System.out.println("Félicitations ! Vous avez gagner");
                     victoire = true;
                     break;
                 }
             }
 
             if (!victoire) {
-                System.out.print("Désolé, vous avez épuisé toutes vos tentatives. La séquence était : ");
+                System.out.print("Perdue, la séquence était : ");
                 for (int j = 0; j < 5; j++) {
                     System.out.print(sequenceSecrete[j] + " ");
                 }
